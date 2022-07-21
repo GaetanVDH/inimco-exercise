@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { TemperatureData } from '../core/models/temperature-data';
+import { TemperatureData } from '../../core/models/temperature-data';
 
 @Component({
   selector: 'inimco-temperature-gauge',
