@@ -1,3 +1,12 @@
-<div class="container">
-  <inimco-temperature-gauge [temperatureData]="temperatureData$ | async"></inimco-temperature-gauge>
+<div class="grid-container">
+  <div class="grid-item">
+    <ng-container *ngIf="temperatureData$ | async as temperatureData">
+      <inimco-temperature-gauge [temperatureData]="temperatureData"></inimco-temperature-gauge>
+    </ng-container>
+  </div>
+  <div class="grid-item">
+    <ng-container *ngIf="temperatureHistoryData$ | async as temperatureHistoryData">
+      <inimco-temperature-history [temperatureHistoryData]="temperatureHistoryData"></inimco-temperature-history>
+    </ng-container>
+  </div>
 </div>

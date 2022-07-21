@@ -1,0 +1,17 @@
+<dx-chart palette="Violet" [dataSource]="temperatureHistoryData">
+  <dxi-series valueField="value" name="Temperature"></dxi-series>
+  <dxo-common-series-settings #seriesSettings argumentField="time">
+  </dxo-common-series-settings>
+  <dxo-margin [bottom]="20"></dxo-margin>
+  <dxo-argument-axis
+    [valueMarginsEnabled]="true"
+    discreteAxisDivisionMode="crossLabels"
+  >
+    <dxo-grid [visible]="true"></dxo-grid>
+    <dxo-label [visible]="true" format="longTime"></dxo-label>
+  </dxo-argument-axis>
+  <dxo-legend [visible]="false">
+  </dxo-legend>
+  <dxo-title text="Temperature over time"> </dxo-title>
+  <dxo-tooltip [enabled]="true"></dxo-tooltip>
+</dx-chart>
