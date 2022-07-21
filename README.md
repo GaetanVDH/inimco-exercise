@@ -1,1 +1,1 @@
-# inimco-exercise
+# Inimco-exercise
