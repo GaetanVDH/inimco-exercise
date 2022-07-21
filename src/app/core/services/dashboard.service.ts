@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Subject, switchMap, timer } from 'rxjs';
+import { map, Observable, timer } from 'rxjs';
 import { TemperatureData } from '../models/temperature-data';
 
 @Injectable()
 export class DashboardService {
-  private temperature$: Subject<TemperatureData>;
-
   constructor() {
-
   }
 
   public getTemperatureData(): Observable<TemperatureData> {
-    return this.temperature$;
+    return timer(1000,1000)
+    .pipe(
+      map(() => {
+        return { value: Math.random() * 100};
+      })
+    )
   }
 }

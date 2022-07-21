@@ -1,5 +1,5 @@
-<dx-circular-gauge id="gauge" [value]="105">
-  <dxo-scale [startValue]="50" [endValue]="150" [tickInterval]="10">
+<dx-circular-gauge id="gauge" [value]="temperatureData?.value || 0" >
+  <dxo-scale [startValue]="10" [endValue]="100" [tickInterval]="10">
     <dxo-label [useRangeColors]="true"></dxo-label>
   </dxo-scale>
   <dxo-range-container palette="pastel">

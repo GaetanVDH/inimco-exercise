@@ -8,7 +8,7 @@ import { TemperatureData } from '../../core/models/temperature-data';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TemperatureGaugeComponent implements OnInit {
-  @Input() public temperatureData: TemperatureData;
+  @Input() public temperatureData: TemperatureData | null;
 
   constructor() { }
 
