@@ -1,12 +1,26 @@
-<div class="grid-container">
-  <div class="grid-item">
-    <ng-container *ngIf="temperatureData$ | async as temperatureData">
-      <inimco-temperature-gauge [temperatureData]="temperatureData"></inimco-temperature-gauge>
-    </ng-container>
-  </div>
-  <div class="grid-item">
-    <ng-container *ngIf="temperatureHistoryData$ | async as temperatureHistoryData">
-      <inimco-temperature-history [temperatureHistoryData]="temperatureHistoryData"></inimco-temperature-history>
-    </ng-container>
-  </div>
-</div>
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card>
+      <mat-card-title>Average temperature</mat-card-title>
+      <mat-card-content>
+        <ng-container *ngIf="temperatureHistoryData$ | async as temperatureHistoryData">
+          <inimco-temperature-history-average [temperatureHistoryData]="temperatureHistoryData"></inimco-temperature-history-average>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card>
+      <ng-container *ngIf="temperatureData$ | async as temperatureData">
+        <inimco-temperature-gauge [temperatureData]="temperatureData"></inimco-temperature-gauge>
+      </ng-container>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1" rowspan="1">
+    <mat-card>
+      <ng-container *ngIf="temperatureHistoryData$ | async as temperatureHistoryData">
+        <inimco-temperature-history [temperatureHistoryData]="temperatureHistoryData"></inimco-temperature-history>
+      </ng-container>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
