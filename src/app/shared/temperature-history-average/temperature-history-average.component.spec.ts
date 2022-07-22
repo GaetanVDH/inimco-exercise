@@ -1,4 +1,8 @@
+import { ChangeDetectionStrategy } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DxChartModule } from 'devextreme-angular';
+import { TemperatureTimeData } from 'src/app/core/models/temperature-time-data';
 
 import { TemperatureHistoryAverageComponent } from './temperature-history-average.component';
 
@@ -8,9 +12,16 @@ describe('TemperatureHistoryAverageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TemperatureHistoryAverageComponent ]
+      imports: [
+        DxChartModule,
+      ],
+      declarations: [TemperatureHistoryAverageComponent]
     })
-    .compileComponents();
+      .compileComponents();
+
+    TestBed.overrideComponent(TemperatureHistoryAverageComponent, {
+      set: { changeDetection: ChangeDetectionStrategy.Default }
+    })
 
     fixture = TestBed.createComponent(TemperatureHistoryAverageComponent);
     component = fixture.componentInstance;

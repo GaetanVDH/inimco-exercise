@@ -23,4 +23,12 @@ export class DashboardComponent implements OnInit {
     this.temperatureData$ = this.dashboardService.getTemperatureData();
     this.temperatureHistoryData$ = this.dashboardService.getTemperatureDataOverTime();
   }
+
+  public increaseTemperature(): void {
+    this.dashboardService.increaseTemperature();
+  }
+
+  public decreaseTemperature(): void {
+    this.dashboardService.decreaseTemperature();
+  }
 }

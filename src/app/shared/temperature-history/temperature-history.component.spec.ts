@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { DxChartModule } from 'devextreme-angular';
+
 import { TemperatureHistoryComponent } from './temperature-history.component';
 
 describe('TemperatureHistoryComponent', () => {
@@ -8,6 +10,9 @@ describe('TemperatureHistoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        DxChartModule
+      ],
       declarations: [ TemperatureHistoryComponent ]
     })
     .compileComponents();

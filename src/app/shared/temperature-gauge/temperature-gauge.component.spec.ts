@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { DxCircularGaugeModule } from 'devextreme-angular';
+
 import { TemperatureGaugeComponent } from './temperature-gauge.component';
 
 describe('TemperatureGaugeComponent', () => {
@@ -8,6 +10,9 @@ describe('TemperatureGaugeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        DxCircularGaugeModule
+      ],
       declarations: [ TemperatureGaugeComponent ]
     })
     .compileComponents();
